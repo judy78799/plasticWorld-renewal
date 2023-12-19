@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Plastic World</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="header-footer.css">
+</head>
+<style>
+    body{
+        width:100vw;
+        height:100vw;
+    }
+    .wrap{
+    overflow-x: hidden;
+    width:100vw;
+    height:100%;    
+    background:url(./img_src/blue-vinyl-plastic-texture.jpg) repeat-y;
+    z-index: 0.5;
+    transition: all 0.1s ease;
+    }
+    .article-title{
+        font-size: 3.5vw;
+        color:white;
+        text-align: center;
+        margin: 7vw auto 10vw auto;
+        font-weight: 700;
+    }
+    .article-list{
+        display: flex;
+        justify-content: space-between;
+        width:50vw;
+        height:fit-content;
+        margin: 2vw auto 8vw auto;
+        text-align: center;
+        align-items: center;
+    }
+    .article-list .list{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:8vw;
+        height:2.5vw;
+        border: 2px solid white;
+        border-radius: 0.5vw;
+        color:rgb(255, 255, 255);
+        font-size: 1vw;
+    }
+    .list .a-text{
+        width:100%;
+        height:fit-content;
+        text-decoration: none;
+        color:white;
+        /* background-color: aqua; */
+    }
+    .article-box{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:center;
+        width:70vw;
+        height:60vw;
+        margin:0 auto;
+        /*background-color: aqua;*/
+    }
+    .aBox{
+        display: flex;
+        width:50vw;
+        height:15vw;
+        background-color: rgb(255, 255, 255);
+        border-radius: 2vw;
+        margin-bottom: 2vw;
+    }
+    .text-area{
+        position: relative;
+        top: -13vw;
+        left:16.5vw;
+        width: 27vw;
+        line-height: 220%;
+        /* background-color: aquamarine; */
+    }
+    .a-img{
+        display: flex;
+        flex-wrap: wrap;
+        width:15vw;
+        height:100%;
+        border-radius: 1vw 0 0 1vw;
+    }
+    .title{
+        width:100%;
+        font-size: 1.2vw;
+        color:black;
+        font-weight: bold;
+        margin-bottom: 1.5vw;
+        line-height: 140%;
+        /* background-color: aqua; */
+    }
+    .content{
+        font-size: 1vw;
+        color:black;
+    }
+    .sec1{
+        width:75vw;
+        height:100vw;
+        margin-bottom: 50vw;
+        /* background-color: aqua; */
+        margin:15vw auto 0 auto;
+    }
+</style>
+<body>
+    <div class="wrap" data-type="background" data-speed="2">
+        <header class="header">
+
+            <div class="scroll-indicator-container">
+                <div class="scroll-indicator-bar"></div>
+            </div>
+
+            <div class="progress_layout">
+                <a href="./index.html" class="head-logo"><img class="header-logo" src="./img_src/main_logo2.png" alt="header-logo"></a>
+                <nav class="nav">
+                        <div class=ul-wrap>
+                            <ul class="ul">
+                                <li class="li"><a href="./pacific.html" class="ul-a">Pacific Ocean</a></li>
+                                <li class="li"><a href="./zeroWaste.html" class="ul-a">Zero-waste</a></li>
+                                <li class="li"><a href="./article.html" class="ul-a">Article</a></li>
+                                <li class="li"><a href="./zeroGame.html" class="ul-a">Game</a></li>
+                            </ul>
+                        </div>
+                </nav>
+            </div>
+                <div class="copy-wrap">
+                    <p class="copyright">Copyright © 2023 민영 박</p>
+                </div>
+        </header>
+
+
+    <section class="sec1">
+        <h2 class="article-title">관련기사</h2>
+        <ul class="article-list">
+            <li class="list"><a href="article1.html" class="a-text">2020</a></li>
+            <li class="list"><a href="article2.html" class="a-text">2021</a></li>
+            <li class="list"><a href="article3.html" class="a-text">2022</a></li>
+            <li class="list"><a href="article4.html" class="a-text">~현재</a></li>
+        </ul>
+
+
+        <ul class="article-box">
+            <li class="aBox">
+                <a href="https://www.bbc.com/korean/international-53544154">
+                    <img src="./img_src/a-1.jpg" alt="" class="a-img">
+                    <div class="text-area">
+                        <h3 class="title">플라스틱 폐기물:2040년까지 13억톤의 플라스틱 쓰레기가 배출될 것</h3>
+                        <article class="content">"전 세계적인 조취가 취해지지 않는다면 2040년까지 약 13억 톤의 플라스틱 쓰레기<br>
+                        가 땅과 바다에 버려지게 될 것..."</article>
+                        <p class="date">2020.7.27</p>
+                    </div>
+                </a>
+            </li>
+            <li class="aBox">
+                <a href="https://m.khan.co.kr/environment/environment-general/article/202303230600005#c2b">
+                    <img src="./img_src/a-2.jpg" alt="" class="a-img">
+                    <div class="text-area">
+                        <h3 class="title">한국 연간 생수병 사용량 '지구 14바퀴'</h3>
+                        <article class="content">그린피스 플라스틱 2.0 보고서...<br>
+                        가 땅과 바다에 버려지게 될 것..."</article>
+                        <p class="date">2023.03.23</p>
+                    </div>
+                </a>
+            </li>
+            <li class="aBox">
+                <a href="https://www.chosun.com/economy/weeklybiz/2023/03/02/YASFJKIHUNCTRMO4CNC5TEYSFA/">
+                    <img src="./img_src/a-3.png" alt="" class="a-img">
+                    <div class="text-area">
+                        <h3 class="title">코로나 뒤 2배가 된 일회용품...쓰레기와 전쟁이 시작됐다</h3>
+                        <article class="content">세계 각국 '플라스틱 일회용품' 강력 규제</article>
+                        <p class="date"></p>
+                    </div>
+                </a>
+            </li>
+            <li class="aBox">
+                <a href="https://www.kidshankook.kr/news/articleView.html?idxno=6060">
+                    <img src="./img_src/a-3.jpg" alt="" class="a-img">
+                    <div class="text-area">
+                        <h3 class="title">지구촌 해양 쓰레기70% 이상이 '플라스틱?'</h3>
+                        <article class="content">0.5cm 보다 작은 미세 플라스틱으로 분해되며 생태계 위협</article>
+                        <p class="date"></p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <footer id="footer">
+        <p>Welcome to Plastic Wolrd @ all rights reserved <br>
+        Email | sera0465@naver.com</p>
+    </footer>
+
+
+</div>
+
+
+<script>
+
+$(function(){
+           //$('p').text(list[2].name);
+            //$('span').text(list.length);
+            //li를 클릭했을 때, h3에 클릭한 li index를 가진 title을 입력
+            //p에 클릭한 li와 동일한 index를 가진 text를 입력 .
+            $('aBox').click(function(){
+                //index: 해당 인덱스 번호를 뜻함.
+                const index = $(this).index();
+
+                //h3 태그에 적어주세요//---> 해당 배열의 인덱스의/ title 속성을
+                $('title').text(list[index].title);
+                //p태그에 적어주세요//--->해당 리스트 배열의 인덱스 번호의 text 속성을
+                $('content').text(list[index].text);
+            });
+        });
+
+
+        //감쌀 박스만 html 상에 있고 나머지 ul, li 등등은 
+    $(function(){
+    $.ajax({
+        url:"json/article2019.json",
+        dataType:"json",
+        success: function(data) {
+            for(let i=0; i < data.length; i++) {
+                const $title = data[i].title,
+                $sort = data[i].sort,
+                $name = data[i].name;
+                $url = data[i].url;
+                //row 변수에 a 태그 생성 후 date에서 url을 가져와 href에 넣어준다.
+                const row = $("<a target = '_blank'>").attr('href', $url).append(
+                $("<h3 class=\"txt_title\">").text($title),
+                $("<article class=\"txt_desc\">").text($sort),
+                $("<p class=\"txt_name\">").text($name)
+                );
+                //row를 li에 붙여주고 ul에 담아준다.
+                const tb = $(".list").append(row);
+                    $(".article2019").append(tb);
+            }
+        }
+    });
+    });
+    /*
+    $.ajax({
+        url:"json/article2020.json",
+        dataType:"json",
+        success: function(data) {
+            for(let i=0; i < data.length; i++) {
+                const $title = data[i].title,
+                $sort = data[i].sort,
+                $name = data[i].name;
+                $url = data[i].url;
+                //row 변수에 a 태그 생성 후 date에서 url을 가져와 href에 넣어준다.
+                const row = $("<a target = '_blank'>").attr('href', $url).append(
+                $("<h3 class=\"txt_title\">").text($title),
+                $("<article class=\"txt_desc\">").text($sort),
+                $("<p class=\"txt_name\">").text($name)
+                );
+                //row를 li에 붙여주고 ul에 담아준다.
+                const tb = $(".list").append(row);
+                    $(".article2019").append(tb);
+            }
+        }
+    });
+});
+*/
+
+//헤더 스크롤 이벤트
+    $(window).scroll(function() { 
+ //현재 스크롤의 위치를 알 수 있습니다.
+	var scrollValue = $(document).scrollTop(); 
+    //console.log(scrollValue); 
+    //var sec1Height = document.querySelector('#sec1').height();
+    // var introHeight = $(".section1").height();
+    var introHeight = $(".header").height();
+    //console.log(introHeight);
+
+
+    //만약 스크롤 값이 497 보다 크다면~ 로고의 크기를 줄이고 위치를 바꿔줘.
+    if(scrollValue > introHeight){
+        //console.log(introHeight);
+        // $('.move_logo').addClass('move_logo_ani');
+        $('.ul').css({
+            'width':'36%',
+            'height':'2vw',
+            // 'backdrop-filter':'blur(20px)',
+            'padding':'1.1rem',
+            'border-radius':'0.5rem',
+            // 'border':'2px solid white',
+            'justify-content':'space-between',  
+    });
+    $('.ul-a').css({
+        'color':'white',
+        'transition':'all 1s ease'
+    });
+    $('.header-logo').css('left','15vw');
+    $('.copy-wrap').css('right','1vw');
+
+    }else if(scrollValue < introHeight){
+        // $('.move_logo').removeClass('move_logo_ani');
+        $('.ul').css({
+            'width':'100%',
+            'backdrop-filter':'none',
+            'justify-content':'space-between',
+            'border':'none',
+            'backgroundColor':'rgba(#ffffff00)'
+        });
+        $('.ul-a').css('color','#ededed');
+        $('.header-logo').css('left','-17vw');
+        $('.copy-wrap').css('right','-15vw');
+    }
+    });
+    </script>
+</body>
+</html>

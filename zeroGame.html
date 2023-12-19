@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Welcome to Plastic World</title>
+    <link rel="stylesheet" href="header-footer.css">
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="normalize.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<style>
+    body{
+        width:100vw;
+        height:100vh;
+       background:linear-gradient(#16246D,#080E2E);
+        /*overflow: hidden;*/
+    }
+    .wrap{
+    overflow-x: hidden;
+    width:100vw;
+    height:100%;    
+    background:url(./img_src/blue-vinyl-plastic-texture.jpg) repeat-y;
+    z-index: 0.5;
+    transition: all 0.1s ease;
+    }
+    /*헤더 변경 Css*/
+    .header .nav .ul-wrap{
+    position: relative;
+    top:0;
+    width:100%;
+    height:9vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    /*background-color: #686868;*/
+  }
+.header-logo2{
+    position: relative;
+    top:0vw;
+    left:15vw;
+    width:10vw;
+    height:3vw;
+    transition:all 0.5s ease;
+    z-index: 1;
+    /*background-color: aliceblue;*/
+    /* padding-right: 2vw; */
+}
+.header .nav .ul {
+    width: 33vw;
+    display: flex;
+    /*이것이 있어야 펼쳐짐*/
+    justify-content: space-between;
+    align-items: center;
+    transition: all 1s ease;
+  }
+  .header .nav .ul-wrap{
+    width:100vw;
+    height:9vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+  }
+  .header .nav .ul-a{
+    color:white;
+  } 
+.copy-wrap{
+    width:12vw;
+    height:6.7vw;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top:0;
+    right:0;
+    z-index: 2;
+    transition:all 0.5s ease;
+    /* background-color: #D0F500; */
+  }
+  .copy-wrap .copyright{
+    font-size: 0.8vw;
+    font-weight: 800;
+    text-align: right;
+    color:#686868;
+  }
+  /*헤더 css 영역 끝*/
+    .title{
+        position: relative;
+        top:0;
+        left:25vw;
+        width:50vw;
+        height:33vw;
+        line-height: 160%;
+        font-weight: 800;
+        padding-top: 12vw;
+        /*background-color: #ffffff;*/
+    }
+    .panel-img{
+        width:50vw;
+        height:20vw;
+    }
+    /*버튼*/
+    .btn-start{
+        display: flex;
+        font-size: 1.2vw;
+        color:black;
+        font-weight: 700;
+        text-align: center;
+        border-radius: 2vw;
+        border: 1vw;
+        margin:5vw auto;
+        background-color: white;
+        z-index: 10;
+        }
+        .btn-start:hover{
+            background-color: red;
+            transition: all 1s ease;
+            z-index: 10;
+        }
+        /*a태그*/
+        .btn-text{
+            display:inline-block;
+            text-decoration: none;
+            width:100%;
+            height:4.5vw;
+            padding:1.5vw 4vw;
+            border-radius: 2vw;
+            color:black;
+            z-index: 5;
+            /* background-color: aqua; */
+        }
+        .btn-text:hover{
+            transition: all 1s ease;
+            color:white;
+        }
+        .sound{
+            position: absolute;
+            top:6vw;
+            left:91.5vw;
+            width:3.8vw;
+            height:4vw;
+            background: url(./img_src/sound-off.png) no-repeat;
+            background-size: contain;
+            z-index: 30;
+        }
+        .sound-on{
+            position: absolute;
+            top:6vw;
+            left:91.5vw;
+            width:3.8vw;
+            height:4vw;
+            background: url(./img_src/sound.png) no-repeat;
+            background-size: contain;
+            z-index: 30;
+        }
+@keyframes wave1 {
+  0% {
+    transform:translateY(20vw);
+    opacity: 0.1;
+  }
+  50% {
+    transform:translateY(20vw);
+    opacity: 0.8;
+    transform:scale(1.2);
+  }
+  100% {
+    transform:translateY(20vw);
+    opacity: 0;
+    transform:scale(1.2);
+  }
+}
+@keyframes wave2 {
+  0% {
+    transform:translateY(20vw);
+    opacity: 0.1;
+  }
+  90% {
+    transform:translateY(15vw);
+    opacity: 0.5;
+  }
+  100% {
+    transform:translateY(15vw);
+    opacity: 0;
+  }
+}
+@keyframes wave3 {
+  0% {
+    transform:translateY(20vw);
+    opacity: 0.1;
+  }
+  90% {
+    transform:translateY(10vw);
+    opacity: 0.8;
+  }
+  100% {
+    transform:translateY(10vw);
+    opacity: 0;
+  }
+}
+.water{
+position:absolute;
+top:5vw;
+left:80vw;
+width:10vw;
+opacity: 0.2;
+animation: wave1 5s ease-in-out infinite;
+}
+.water2{
+    width:7vw;
+position:absolute;
+top:15vw;
+left:78vw;
+transform: scale(0.8);
+animation: wave2 5s ease-in-out infinite;
+}
+.water3{
+    width:5vw;
+position:absolute;
+top:10vw;
+left:79vw;
+translate: scale(0.8);
+animation: wave2 5s ease-in-out infinite;
+}
+.wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 1;
+}
+.wrapper h1 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 888;
+  text-transform: uppercase;
+}
+.wrapper .bubble {
+  height: 60px;
+  width: 60px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50px;
+  position: absolute;
+  animation: animate 10s linear infinite;
+}
+.wrapper .bubble:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation-duration: 8s;
+}
+.wrapper .bubble:nth-child(2) {
+  top: 60%;
+  left: 80%;
+  animation-duration: 10s;
+}
+.wrapper .bubble:nth-child(3) {
+  top: 40%;
+  left: 40%;
+  animation-duration: 3s;
+}
+.wrapper .bubble:nth-child(4) {
+  top: 66%;
+  left: 30%;
+  animation-duration: 7s;
+}
+.wrapper .bubble:nth-child(5) {
+  top: 90%;
+  left: 10%;
+  animation-duration: 9s;
+}
+.wrapper .bubble:nth-child(6) {
+  top: 30%;
+  left: 60%;
+  animation-duration: 5s;
+}
+.wrapper .bubble:nth-child(7) {
+  top: 70%;
+  left: 20%;
+  animation-duration: 8s;
+}
+.wrapper .bubble:nth-child(8) {
+  top: 75%;
+  left: 60%;
+  animation-duration: 10s;
+}
+.wrapper .bubble:nth-child(9) {
+  top: 50%;
+  left: 50%;
+  animation-duration: 6s;
+}
+.wrapper .bubble:nth-child(10) {
+  top: 45%;
+  left: 20%;
+  animation-duration: 10s;
+}
+.wrapper .bubble:nth-child(11) {
+  top: 10%;
+  left: 90%;
+  animation-duration: 9s;
+}
+.wrapper .bubble:nth-child(12) {
+  top: 20%;
+  left: 70%;
+  animation-duration: 7s;
+}
+.wrapper .bubble:nth-child(13) {
+  top: 20%;
+  left: 20%;
+  animation-duration: 8s;
+}
+.wrapper .bubble:nth-child(14) {
+  top: 60%;
+  left: 5%;
+  animation-duration: 6s;
+}
+.wrapper .bubble:nth-child(15) {
+  top: 90%;
+  left: 80%;
+  animation-duration: 9s;
+}
+@keyframes animate {
+  0% {
+    transform: scale(0) translateY(0) rotate(70deg);
+  }
+  100% {
+    transform: scale(1.3) translateY(-100px) rotate(360deg);
+  }
+}
+</style>
+<body>
+    <header class="header">
+
+        <div class="scroll-indicator-container">
+            <div class="scroll-indicator-bar"></div>
+        </div>
+
+        <div class="progress_layout">
+            <a href="./index.html" class="head-logo"><img class="header-logo2" src="./img_src/logo-white.png" alt="header-logo"></a>
+            <nav class="nav">
+                    <div class=ul-wrap>
+                        <ul class="ul">
+                            <li class="li"><a href="./zeroWaste.html" class="ul-a">Zero-waste</a></li>
+                            <li class="li"><a href="./article.html" class="ul-a">Article</a></li>
+                            <li class="li"><a href="./zeroGame.html" class="ul-a">Game</a></li>
+                        </ul>
+                    </div>
+            </nav>
+        </div>
+            <div class="copy-wrap">
+                <p class="copyright">Copyright © 2023 민영 박</p>
+            </div>
+        
+    </header>
+
+
+        <div class="title">
+            <img src="./img_src/panel.png" alt="" class="panel-img">
+        </div>
+        <button class="btn-start"><a href="quiz-1.html" class="btn-text">게임 Start!</a></button>
+        <div class="sound play"></div>
+
+<!-- 비눗방울 효과 -->
+    <div class="wrapper">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        </div>
+    <script>
+
+    $(function(){
+        //사운드 이미지를 클릭하면~오디오가 플레이되게 해줘
+        $('.sound').click(function(){
+            var audio = new Audio('./sound/sound.mp3');
+            $(this).css({'background':'url(./img_src/sound.png)'});
+        audio.play();
+        $('.sound').click(function(){
+            $(this).css({'background':'url(./img_src/sound-off.png)'});
+            audio.pause();
+            });
+        });
+
+
+
+$(document).ready(function() {
+    // 클릭 이벤트 핸들러
+    function handleClick() {
+        var audio = new Audio('./sound/sound.mp3');
+        var targetElement = $(this);
+    
+        if (targetElement.hasClass('active')) {
+        // 이미 클릭된 상태인 경우
+        argetElement.addClass('active');
+        audio.play();
+        
+        } else {
+        // 클릭되지 않은 상태인 경우
+        targetElement.removeClass('active');
+        audio.pause();
+        }
+    }
+    
+    // 이미지를 클릭할 요소 선택
+    var targetElement = $('.sound');
+    
+    // 클릭 이벤트 핸들러 등록
+    targetElement.on('click', handleClick);
+    });
+});
+
+    </script>
+</body>
+</html>

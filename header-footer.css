@@ -1,0 +1,226 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+body {
+    overflow-x: hidden;
+    width:100vw;
+    height:100%;
+    background: linear-gradient(rgba(0, 0, 0, 0),black);
+    /* animation: backgroundScroll 100s linear infinite; */
+    
+}
+/*
+.wrap{
+  overflow-x: hidden;
+    width:100vw;
+    height:100%;    
+    background:url(./img_src/blue-vinyl-plastic-texture.jpg) repeat-y;
+    z-index: 0.5;
+    transition: all 0.2s ease;
+}
+*/
+/*헤더 너비 설정*/
+.nav .li {
+list-style-type: none;
+}  
+.nav-up {
+top: -15vh;
+}
+/*header 시작 영역 입니다.*/
+.header {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height:6.7vw;
+    /* 헤더가 올라갈 때 부드러운 모션을 위한 기능 */
+    /* transition: top 0.2s ease-in-out; */
+    z-index: 100;
+    /*background-color: #D0F500;*/
+    /* background: linear-gradient(black, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0)); */
+    }
+    /*네비게이션 바에만 수평정렬 위치시키고*/
+    /*프로그래스 바는 수직 정렬로 위치시키기 위해 따로 추가함.*/
+    .progress_layout{
+        display: flex;
+        align-items: center;
+        width:100vw;
+        height:6.7vw;
+    /*background: linear-gradient(to bottom,rgba(0, 0, 0, 0.47),transparent);*/
+    /*backdrop-filter: blur(10px);*/
+  }
+  .progress_layout::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));*/
+    filter: blur(10px);
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, transparent 70%, black 100%);
+    mask-image: linear-gradient(to top, transparent 70%, transparent 0%, black 100%);
+  }
+  .progress_layout .head-logo{
+        position: relative;
+        top:0vw;
+        left:-12vw;
+        width:7.5vw;
+        height:fit-content;
+        transition:all 0.5s ease;
+        z-index: 100;
+        cursor: pointer;
+        /* padding-right: 2vw; */
+        background-color: #2a4cb2;
+  }
+  .nav-up {
+    top: -10vw;
+    transition: all 1s ease;
+  }
+  .header .nav {
+    width: 100vw;
+    height:100%;
+    display: flex;
+    /*ul-wrap으로 부터 마진 값을 주었을 때 거리가 같이 멀어지도록 */
+    justify-content: center;
+    align-items: center;
+    margin:0 auto;
+    /* background-color: #4d4d4d; */
+  }
+  .header .nav .ul-wrap{
+    position: relative;
+    top:0;
+    left:-4vw;
+    width:100%;
+    height:9vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+  }
+  .header .nav .ul {
+    width: 100%;
+    display: flex;
+    /*이것이 있어야 펼쳐짐*/
+    justify-content: space-between;
+    align-items: center;
+    margin:0 auto;
+    transition: all 1s ease;
+  }
+  .header .nav .ul .li{
+    margin: 0 1vw;
+  }
+  .li .ul-a {
+    font-size: 0.9vw;
+    font-family: pretendard;
+    font-weight: 900;
+    color:#000000;
+    z-index: 100;
+    text-decoration: none;
+  }
+.li .ul-a:hover{
+    color: white;
+    transition: all 1s ease;
+  }
+  .header2{
+    position: fixed;
+    width:100vw;
+    height:9vw;
+    z-index: 1;
+    /* background-color: #434343; */
+}
+.header-logo-wrap{
+    position: fixed;
+    top:0;
+    right:0;
+    width:100vw;
+    height:9vw;
+    z-index: 1;
+    background-color: #D0F500;
+}
+.header-logo{
+    position: relative;
+    top:0vw;
+    left:-13vw;
+    width:10vw;
+    height:fit-content;
+    transition:all 0.5s ease;
+    z-index: 1;
+    /* padding-right: 2vw; */
+}
+  .icon-header{
+    position: fixed;
+    top:3.8vh;
+    right:5vw;
+    width:100vw;
+    height:10vw;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    z-index: 1;
+  }
+  .copy-wrap{
+    width:12vw;
+    height:6.7vw;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top:0;
+    right:-13vw;
+    z-index: 2;
+    transition:all 0.5s ease;
+    /* background-color: #D0F500; */
+  }
+  .copy-wrap .copyright{
+    font-size: 0.8vw;
+    font-weight: 800;
+    text-align: right;
+    color:#686868;
+  }
+      /*Scroll indicator Bar===========================================*/
+      .scroll-indicator-container{
+        width:100vw;
+        height:5px;
+    }
+    /*bar*/
+    .scroll-indicator-bar{
+        background: #d0f500d5;
+        width:0%;
+        height:0.3vw;
+        /* box-shadow: 0 1px 30px #d0f50065, 0 1px 20px #d0f50034; */
+    }
+    /*우측 스크롤 바 ===========================================*/
+    ::-webkit-scrollbar{
+        background:#131313;
+        width:11px;
+        border-radius: 2em;
+    }
+
+    ::-webkit-scrollbar-thumb{
+        background:#434343;
+        width:100vw;
+        border-radius: 2em;
+    }
+    ::-webkit-scrollbar-thumb:hover{
+        background:#000000;
+        width:100vw;
+        border-radius: 2em;
+        transition: all 2s ease;
+    }
+
+    .footer {
+      position: relative;
+      top: 0;
+      width: 100vw;
+      height: 13vw;
+      background-color: #202020;
+      text-align: center;
+      padding: 5%;
+      line-height: 170%;
+      color: #525252;
+      }

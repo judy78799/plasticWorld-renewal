@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Plastic World</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="header-footer.css">
+</head>
+<style>
+    body{
+        width:100vw;
+        height:100vw;
+        background:white;
+        font-family: pretendard;
+    }
+    .wrap{
+    overflow-x: hidden;
+    width:100vw;
+    height:100%;    
+    background:url(./img_src/bg.png) 100%;
+    background-size: cover;
+    transition: all 0.1s ease;
+    }
+    .a-list{
+        color:black;
+    }
+    .article-title{
+    position: relative;
+    top:2vw;
+    left:27.5vw;
+    width:fit-content;
+    border-bottom: 0.2vw solid rgb(0, 0, 0);
+    font-size:7vw;
+    font-weight: 900;
+    text-align: center;
+    line-height: 150%;
+    color:#00000000;
+    margin: 5vw 0 15vw 0; 
+    -webkit-text-stroke:1.2px rgb(0, 0, 0);
+    /*background-color: aquamarine; */
+    }
+    .article-list{
+        display: flex;
+        justify-content: space-between;
+        width:50vw;
+        height:fit-content;
+        margin: 2vw auto 8vw auto;
+        text-align: center;
+        align-items: center;
+    }
+    .article-list .list{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:8vw;
+        height:2.5vw;
+        border:0.2vw solid rgb(0, 0, 0);
+        border-radius: 0.5vw;
+        color:rgb(0, 0, 0);
+        font-size: 1vw;
+    }
+    .list .a-text{
+        width:100%;
+        height:fit-content;
+        text-decoration: none;
+        color:rgb(0, 0, 0);
+        /* background-color: aqua; */
+    }
+    .article-box{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width:80vw;
+        height:70vw;
+        margin:0 0 0 5vw;
+        padding-left: 5vw;
+        z-index: 3;
+        /*background-color: aqua;*/
+    }
+    .aBox{
+        display: flex;
+        width:60vw;
+        height:15vw;
+        background-color: rgb(222, 222, 222);
+        border-radius: 2vw;
+        margin-bottom: 2vw;
+        transition: all 1s ease;
+        z-index: 3;
+    }
+    .text-area{
+        position: relative;
+        top: -13vw;
+        left:16.5vw;
+        width: 27vw;
+        line-height: 220%;
+        /* background-color: aquamarine; */
+    }
+    .a-img{
+        display: flex;
+        width:15vw;
+        height:100%;
+        border-radius: 1vw 0 0 1vw;
+    }
+    .title{
+        width:38vw;
+        font-size: 1.5vw;
+        color:black;
+        font-weight: bold;
+        margin-bottom: 1.5vw;
+        line-height: 120%;
+        /*background-color: aqua;*/
+    }
+    .content{
+        width:30vw;
+        height:5vw;
+        font-size: 1.1vw;
+        color:black;
+        /*background-color: #212c7c;*/
+        margin: 2vw 0;
+    }
+    .sec1{
+        width:80vw;
+        height:100vw;
+        margin-bottom: 50vw;
+        line-height: 120%;
+        /*background-color: aqua;*/
+        margin:15vw auto 0 auto;
+    }
+    /*.show{
+    transform: translateX(50vw);
+    transition: all 1s ease;
+}*/
+.date{
+    position: relative;
+    top:-2vw;
+    left:0vw;
+    font-size: 1vw;
+    color:#000000;
+}
+.left-img{
+    display: flex;
+    position: relative;
+    top:-100vw;
+    left:0vw;
+    width:40vw;
+    height:45vw;
+    z-index:-1;
+    opacity: 0.5;
+}
+.right-img{
+    position: relative;
+    width:40vw;
+    height:50vw;
+    top:-80vw;
+    left:35vw;
+    z-index:-1;
+    opacity: 0.5;
+}
+.turtle-hide{
+    position: relative;
+    top:-50vw;
+    left:17vw;
+    width:19vw;
+    z-index:1;
+    opacity: 0.9;
+}
+.footer {
+      width: 100vw;
+      height: 15vw;
+      background-color: #202020;
+      text-align: center;
+      padding: 5%;
+      line-height: 170%;
+      color: #525252;
+      }
+</style>
+<body>
+    <!--<div class="wrap" data-type="background" data-speed="2">-->
+        <div class="wrap">
+            <header class="header">
+
+                <div class="scroll-indicator-container">
+                    <div class="scroll-indicator-bar"></div>
+                </div>
+        
+                <div class="progress_layout">
+                    <a href="./index.html" class="head-logo"><img class="header-logo" src="./img_src/main_logo2.png" alt="header-logo"></a>
+                    <nav class="nav">
+                            <div class=ul-wrap>
+                                <ul class="ul">
+                                    <li class="li"><a href="./zeroWaste.html" class="ul-a">Zero-waste</a></li>
+                                    <li class="li"><a href="./article.html" class="ul-a">Article</a></li>
+                                    <li class="li"><a href="./zeroGame.html" class="ul-a">Game</a></li>
+                                </ul>
+                            </div>
+                    </nav>
+                </div>
+                    <div class="copy-wrap">
+                        <p class="copyright">Copyright © 2023 민영 박</p>
+                    </div>
+                
+            </header>
+
+
+    <section class="sec1">
+        <h2 class="article-title">관련기사</h2>
+
+
+        <ul class="article-box">
+            <li class="aBox">
+                <a href="https://www.bbc.com/korean/international-53544154">
+                    <img src="./img_src/a-1.jpg" alt="" class="a-img">
+                    <div class="text-area">
+                        <h3 class="title">플라스틱 폐기물:2040년까지 13억톤의 플라스틱 <br>쓰레기가 배출될 것</h3>
+                        <article class="content">"전 세계적인 조취가 취해지지 않는다면 2040년까지 약 13억 톤의 플라스틱 쓰레기
+                        가 땅과 바다에 버려지게 될 것..."</article>
+                        <p class="date">2023.7.27</p>
+                    </div>
+                </a>
+            </li>
+            <li class="aBox">
+                <a href="https://m.khan.co.kr/environment/environment-general/article/202303230600005#c2b">
+                    <img src="./img_src/a-2.jpg" alt="" class="a-img">
+                    <div class="text-area">
+                        <h3 class="title">한국 연간 생수병 사용량 '지구 14바퀴'</h3>
+                        <article class="content">"그린피스 플라스틱 2.0 보고서...<br>
+                        가 땅과 바다에 버려지게 될 것..."</article>
+                        <p class="date">2023.03.23</p>
+                    </div>
+                </a>
+            </li>
+            <li class="aBox">
+                <a href="https://www.chosun.com/economy/weeklybiz/2023/03/02/YASFJKIHUNCTRMO4CNC5TEYSFA/">
+                    <img src="./img_src/a-3.png" alt="" class="a-img">
+                    <div class="text-area">
+                        <h3 class="title">코로나 뒤 2배가 된 일회용품...쓰레기와 전쟁이 시작됐다</h3>
+                        <article class="content">세계 각국 '플라스틱 일회용품' 강력 규제</article>
+                        <p class="date">2023.03.05</p>
+                    </div>
+                </a>
+            </li>
+            <li class="aBox">
+                <a href="https://www.kidshankook.kr/news/articleView.html?idxno=6060">
+                    <img src="./img_src/a-3.jpg" alt="" class="a-img">
+                    <div class="text-area">
+                        <h3 class="title">지구촌 해양 쓰레기70% 이상이 '플라스틱?'</h3>
+                        <article class="content">0.5cm 보다 작은 미세 플라스틱으로 분해되며 생태계 위협</article>
+                        <p class="date">2023.03.05</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <img src="./img_src/turtle-top.png" alt="" class="turtle-hide">
+    <footer class="footer">
+        <p>Welcome to Plastic Wolrd @ all rights reserved <br>
+        Email | sera0465@naver.com</p>
+    </footer>
+</div>
+
+
+<script>
+
+$(function(){
+
+        
+
+//헤더 스크롤 이벤트
+    $(window).scroll(function() { 
+ //현재 스크롤의 위치를 알 수 있습니다.
+	var scrollValue = $(document).scrollTop(); 
+    //console.log(scrollValue); 
+    //var sec1Height = document.querySelector('#sec1').height();
+    // var introHeight = $(".section1").height();
+    var introHeight = $(".header").height();
+    //console.log(introHeight);
+
+
+    //만약 스크롤 값이 497 보다 크다면~ 로고의 크기를 줄이고 위치를 바꿔줘.
+    if(scrollValue > introHeight){
+        //console.log(introHeight);
+        // $('.move_logo').addClass('move_logo_ani');
+        $('.ul').css({
+            'width':'36%',
+            'height':'2vw',
+            // 'backdrop-filter':'blur(20px)',
+            'padding':'1.1rem',
+            'border-radius':'0.5rem',
+            // 'border':'2px solid white',
+            'justify-content':'space-between',  
+    });
+    $('.ul-a').css({
+        'color':'black',
+        'transition':'all 1s ease'
+    });
+    $('.header-logo').css('left','15vw');
+    $('.copy-wrap').css('right','1vw');
+
+    }else if(scrollValue < introHeight){
+        // $('.move_logo').removeClass('move_logo_ani');
+        $('.ul').css({
+            'width':'100%',
+            'backdrop-filter':'none',
+            'justify-content':'space-between',
+            'border':'none',
+            'backgroundColor':'rgba(#ffffff00)'
+        });
+        $('.ul-a').css('color','black');
+        $('.header-logo').css('left','-17vw');
+        $('.copy-wrap').css('right','-15vw');
+    }
+
+
+    //박스요소 인터렉션
+    var scrollValue = $(document).scrollTop(); 
+    var sec1 = $(".sec1").offset().top;
+    var abox = $(".aBox").offset().top;
+
+
+    //텍스트 강조 효과 "제로 웨이스트란?"
+    if(scrollValue > sec1 * 0.7){
+        $('.article-title').css({
+            'color':'black',
+            'transition':'all 1s ease',
+            'transform':'translateX(0vw)'
+        })
+        $(".aBox").css({
+            'transform':'translateX(20vw)',
+            'transition':'all 1s ease'
+        });
+    }else if(scrollValue < sec1 * 1){
+        $('.sec01_title').css({
+            'color':'transparent',
+            'transition':'all 1s ease',
+            'transform':'translateX(-78vw)'
+        })
+        $(".aBox").css({
+            'transform':'translateX(0vw)',
+            'transition':'all 1s ease'
+        });
+    }
+
+
+
+
+    });
+});
+
+/*const boxes = document.querySelectorAll('.aBox');
+window.addEventListener('scroll',checkBoxes);
+
+checkBoxes();
+
+function checkBoxes() {
+    console.log(window.innerHeight);
+    const triggerBottom= window.innerHeight/5*4;
+
+    boxes.forEach((box) => {
+        //박스 각각의 요소의 현재 높이를 알아냄
+        const boxTop = box.getBoundingClientRect().top;
+
+        if (boxTop < triggerBottom) {
+            box.classList.add('show');
+        } else if (boxTop > triggerBottom){
+            box.classList.remove('show');
+        }
+    })
+
+}*/
+
+
+    </script>
+</body>
+</html>

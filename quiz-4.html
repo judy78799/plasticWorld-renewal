@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Plastic World</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="header-footer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<style>
+    body{
+        width:100vw;
+        height:100vh;
+        overflow-x: hidden;
+        font-family: pretendard;
+    }
+    .wrap{
+        width:100vw;
+        height:100vh;
+        overflow-x: hidden;
+        background:linear-gradient(#16246D,#080E2E);
+    }
+    /*헤더 변경 Css*/
+.header-logo2{
+    position: relative;
+    top:0vw;
+    left:18.5vw;
+    width:10vw;
+    height:3vw;
+    transition:all 0.5s ease;
+    z-index: 1;
+    /*background-color: aliceblue;*/
+    /* padding-right: 2vw; */
+}
+.header .nav .ul {
+    width: 33vw;
+    display: flex;
+    /*이것이 있어야 펼쳐짐*/
+    justify-content: space-between;
+    align-items: center;
+    transition: all 1s ease;
+  }
+  .header .nav .ul-wrap{
+    width:100vw;
+    height:9vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+  }
+  .header .nav .ul-a{
+    color:white;
+  } 
+.copy-wrap{
+    width:12vw;
+    height:6.7vw;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top:0;
+    right:0;
+    z-index: 2;
+    transition:all 0.5s ease;
+    /* background-color: #D0F500; */
+  }
+  .copy-wrap .copyright{
+    font-size: 0.8vw;
+    font-weight: 800;
+    text-align: right;
+    color:#686868;
+  }
+  /*헤더 css 영역 끝*/
+    .sec1{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width:100vw;
+        height:100vh;
+    }
+    .c-wrap{
+        position: relative;
+        top:3vw;
+        width:70vw;
+        height:70vh;
+        border-radius: 2vw;
+        margin:0 auto;
+        backdrop-filter: blur(5vw);
+        box-shadow: 0vw 0vw 2vw rgb(153, 153, 153);
+        background-color: aliceblue;
+    }
+    .quiz{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:fit-content;
+        height:3vw;
+        font-size: 1.5vw;
+        font-weight: bold;
+        text-align: center;
+        margin-right: 1vw;
+        /*background-color: #16246D;*/
+    }
+    .title-wrap{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        margin: 2vw auto;
+        /*background-color: antiquewhite;*/
+    }
+    .btn-hint{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:6vw;
+        height:2.5vw;
+        font-size: 1vw;
+        font-weight: 600;
+        color:rgb(0, 0, 0);
+        border: 1.5px solid black;
+        border-radius: 2vw;
+    }
+    .btn-hint:hover{
+        background-color: #000000;
+        color:white;
+    }
+    /*선댁 박스*/
+    .select{
+        display: flex;
+        justify-content: space-between;
+        width:60%;
+        height:20vw;
+        margin:7vw auto 0 auto;
+        /*sbackground-color: aqua;*/
+    }
+    .btn-select{
+        width:15vw;
+        height:15vw;
+        border-radius: 1vw;
+        font-size: 2vw;
+        font-weight: bold;
+        background-color: rgb(255, 255, 255);
+        z-index: 0;
+    }
+    .btn-select:hover{
+        box-shadow: 7px 5px 15px #aeaeae;
+    }
+    .btn-select2:hover{
+        box-shadow: 7px 5px 15px #aeaeae;
+    }
+    .btn-select2{
+        width:15vw;
+        height:15vw;
+        border-radius: 1vw;
+        font-size: 2vw;
+        font-weight: bold;
+        background-color: rgb(255, 255, 255);
+        z-index:0;
+    }
+    .hint-img{
+        display: flex;
+        width:23vw;
+        height:15vw;
+        margin:2vw auto;
+    }
+    .green{
+        color:green;
+    }
+    .red{
+        color:red;
+    }
+    .atag{
+        background-color: #16246D;
+    }
+    .answer{
+        font-size: 1.5vw;
+    }
+@keyframes wrong {
+    0% {opacity: 0.7; }
+    50% {background-color:red; opacity: 0.2; }
+    100% {opacity: 0.7; }
+}
+.wrong {
+    animation: wrong 1s infinite;
+}
+/*팝업 버튼*/
+.popup{
+    display: none;
+        position: absolute;
+        top:50%;
+        left:50%;
+        width:40vw;
+        height:30vw;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+        border-radius: 5px;
+        text-align: right;
+        box-sizing: border-box;
+        transform: translate(-50%,-50%);
+        background-color: #fff;
+        opacity: 0;
+        transition: all 0.5s;
+        z-index: 5;
+    }
+    .popup a{
+        color:grey;
+        text-decoration: none;
+    }
+    /*현재 선택자로 왔을 때 dim이라는 클래스를 붙여준다*/
+    .popup:target + .dim{
+        display: block;
+        opacity: 1;
+        z-index: 2;
+    }
+    .popup:target{
+        display: block;
+        opacity: 1;
+    }
+    .close{
+    position: relative;
+    top:1.5vw;
+    right:2vw;
+    font-size: 2vw;
+    }
+    .hint-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:15vw;
+    font-size: 1.5vw;
+    margin: 2vw auto;
+    border-top: 2px solid rgb(189, 189, 189);
+    border-bottom: 2px solid rgb(189, 189, 189);
+    padding:0.5vw 1.5vw;
+    }
+    /*팝업 뒤에 어두운 배경까는 역할*/
+    .dim{
+        display: none;
+        position: absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        background: rgba(0, 0, 0, 0.5);
+        /*body요소 밑으로 빠진다*/
+        z-index: -1;
+        opacity: 0;
+    }
+    /*밑 버튼*/
+    .btn-select-wrap{
+        position: relative;
+        top:-1vw;
+        width:100%;
+        height:3vw;
+        /* background-color: antiquewhite; */
+    }
+    .back{
+        position: relative;
+        top:0;
+        left:8vw;
+        width:12vw;
+        height:4vw;
+        border-radius: 2vw;
+        background: linear-gradient(to left, aliceblue, red);
+    }
+    .back-atag{
+        font-size: 1.2vw;
+        color:white;
+    }
+    .next{
+        position: relative;
+        top:0vw;
+        left:68vw;
+        width:12vw;
+        height:4vw;
+        border-radius: 2vw;
+        background: linear-gradient(to right, aliceblue, red);
+    }
+    .next-atag{
+        font-size: 1.2vw;
+        color:white;
+    }
+</style>
+<body>
+    <div class="wrap">
+        <header class="header">
+
+            <div class="scroll-indicator-container">
+                <div class="scroll-indicator-bar"></div>
+            </div>
+    
+            <div class="progress_layout">
+                <!--<a href="./index.html" class="head-logo"><img class="header-logo" src="./img_src/main_logo.png" alt="header-logo"></a>-->
+                <nav class="nav">
+                    <div class=ul-wrap>
+                        <a href="./index.html" class="head-logo"><img class="header-logo2" src="./img_src/logo-white.png" alt="header-logo"></a>
+                                <ul class="ul">
+                                    <li class="li"><a href="./nowSea.html" class="ul-a">Pacific Ocean</a></li>
+                                    <li class="li"><a href="./zeroWaste.html" class="ul-a">Zero-waste</a></li>
+                                    <li class="li"><a href="./article.html" class="ul-a">Article</a></li>
+                                    <li class="li"><a href="./zeroGame.html" class="ul-a">Game</a></li>
+                                </ul>
+                    </div>
+                        <div class="copy-wrap">
+                            <p class="copyright">Copyright © 2023 민영 박</p>
+                        </div>
+                </nav>
+            </div>
+                <!--<div class="copy-wrap">
+                    <p class="copyright">Copyright © 2023 민영 박</p>
+                </div>-->
+        </header>
+
+        <section class="sec1">
+            <div class="c-wrap">
+                <div class="title-wrap">
+                    <h2 class="quiz">Q4. 육지에서 버리는 쓰레기가 해양 생태계와 관련이 있을까?</h2>
+                     <a href="#pop1" class="btn-hint">Hint</a>
+                </div>
+                    <div class="select">
+                        <a href="./quiz-5.html">
+                        <button class="btn-select">
+                            <p class="answer">관련 있다</p>
+                        </button>
+                        </a>
+                        <a class="btn-a" onclick="blinkBackground();">
+                            <button class="btn-select2 right">
+                                <p class="answer">관련 없다</p>
+                            </button>
+                        </a>
+
+                </div>
+            </div>
+
+            <div class="btn-select-wrap">
+                <button class="back">
+                    <a href="./quiz-3.html" class="back-atag">
+                        이전문제
+                    </a>
+                </button>
+
+                <button class="next">
+                    <a href="./quiz-5.html" class="next-atag">
+                        다음문제
+                    </a>
+                </button>
+            </div>
+            
+            <!--팝업 창-->
+            <div class="popup" id="pop1">
+                <a href="" class="close">X</a>
+                <h2 class="hint-text">Hint Image</h2>
+                <img src="./img_src/a-1.jpg" alt="" class="hint-img">
+            </div>
+            <div class="dim"></div>
+        </section>
+    </div>
+<script>
+//배경이 깜빡거리는 함수 자바스크립트ver -> 이건 실행 되지만 원하는 효과가 나오진 않음
+// 클릭 이벤트를 처리할 요소 선택
+
+var targetElement = document.querySelector('.btn-a');
+
+
+//이벤트 등록
+function blinkBackground() {
+
+var wrap = document.querySelector('.wrap');
+var body = document.querySelector('body');
+//기존 바디 색상
+var originalColor = body.style.backgroundColor;
+var originalColor2 = wrap.style.backgroundColor;
+
+//5초마다 실행
+var intervalId = setInterval(function() {
+    if (body.style.backgroundColor === originalColor) {
+      //console.log("wrap 색상은 빨강입니다");
+    body.style.backgroundColor = 'red';
+    body.style.opacity = '0.5';
+    body.style.transition = 'all 1s ease'; 
+    } else {
+    body.style.backgroundColor = originalColor2;
+    body.style.opacity = '1';
+    body.style.transition = 'all 1s ease'; 
+    }
+}, 500);
+
+// 애니메이션 멈추기 위해 일정 시간 후에 clearInterval 호출
+setTimeout(function() {
+    clearInterval(intervalId);
+    body.style.backgroundColor = originalColor2; // 원래 색상으로 복원
+}, 2000); // 2초 후에 애니메이션 멈춤
+}
+
+// 클릭 이벤트 핸들러 등록
+targetElement.addEventListener('click', function blinkBackground() {
+    // 함수 호출
+    blinkBackground();
+});
+
+
+
+    </script>
+</body>
+</html>
